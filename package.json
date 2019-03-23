@@ -1,0 +1,22 @@
+{
+  "name": "ajax-curd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-hbs": "^2.0.2",
+    "express-static": "^1.2.6",
+    "handlebars": "^4.1.1",
+    "mongodb": "^3.2.1",
+    "mongoose": "^5.4.19"
+  }
+}
