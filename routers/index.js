@@ -9,6 +9,8 @@ router.get('/', (req, res)=> {
 })
 
 router.post('/adduser',(req, res)=> {    
+    console.log(req.body);
+    
     const user = new Users({
         name: req.body.name,
         email: req.body.email
@@ -16,7 +18,7 @@ router.post('/adduser',(req, res)=> {
      user.save()
          .then(()=> {
              console.log('user added')
-             res.redirect('/')
+             res.end()
             })
          .catch(()=> console.log('error'))
     
