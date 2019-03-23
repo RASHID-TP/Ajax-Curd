@@ -1,14 +1,22 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const hbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 
 
 const app = express();
 
+// Mongodb setup
 mongoose.connect('mongodb://localhost:27017/ajaxCurd', {useNewUrlParser: true})
     .then(()=> console.log('Mongo db connected'))
     .catch((err)=> console.log(err))
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false}))
+
+// parse application/json
+app.use(bodyParser.json())
 
 
 
@@ -19,9 +27,7 @@ app.engine( 'hbs', hbs( {
     layoutsDir: __dirname + '/views/layouts/',
     partialsDir: __dirname + '/views/partials/'
   } ) );
-  
-
-  app.set( 'view engine', 'hbs' );
+app.set( 'view engine', 'hbs' );
 
 app.use('/', require('./routers/index'))
 app.use('/users', require('./routers/users'))
