@@ -15,12 +15,18 @@ router.post('/adduser',(req, res)=> {
         name: req.body.name,
         email: req.body.email
     });
-     user.save()
-         .then(()=> {
-             console.log('user added')
-             res.end()
-            })
-         .catch(()=> console.log('error'))
+     user.save((err, doc, row)=> {
+
+        if(err) {
+            throw err
+        }
+        console.log('user added')
+        console.log(doc.name);
+        console.log(row);
+        
+        res.send({name:doc.name, email:doc.email})
+     })
+
     
 })
 

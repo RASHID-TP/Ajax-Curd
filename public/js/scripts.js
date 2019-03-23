@@ -16,19 +16,29 @@ $(()=> {
     let url = $form.attr('action');
 
     /* Send the data using post */
-    var posting = $.post(url, {
+    $.post(url, {
         name: name,
         email: email
+    }, (data, status, xhr)=> {
+      console.log(xhr);
+      if(status == "success"){
+        console.log(data);
+        console.log(status);
+        $("#listGroup").prepend('<li class="list-group-item" ><b>Name: </b>'+ data.name + ' <br> <b>Email: </b>'+ data.email +' </li>');
+
+      }
+
     });
 
     /* Put the results in a div */
-    posting.done(function(data) {
-      console.log(data);
+    // posting.done(function(data) {
+    //   console.log(data);
       
         // var content = $(data).find('#content');
         // $("#result").empty().append(content);
-    });
-});
+    // });
+
+  });
 
 
 
@@ -43,7 +53,7 @@ $(()=> {
           $.each(doc, (key, obj) => {
             // console.log(key)
             // console.log(obj);
-            $("#listGroup").append('<li class="list-group-item" ><b>Name: </b>'+ obj.name + ' <br> <b>Email: </b>'+ obj.email +' </li>');
+            $("#listGroup").prepend('<li class="list-group-item" ><b>Name: </b>'+ obj.name + ' <br> <b>Email: </b>'+ obj.email +' </li>');
           })
         }
         //console.log(status + xhr);
@@ -62,4 +72,5 @@ $(()=> {
     //     success: function () {}
     // });
     // })
+
 })
