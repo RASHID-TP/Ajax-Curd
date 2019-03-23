@@ -25,6 +25,10 @@ $(()=> {
         console.log(data);
         console.log(status);
         $("#listGroup").prepend('<li class="list-group-item" ><b>Name: </b>'+ data.name + ' <br> <b>Email: </b>'+ data.email +' </li>');
+        // Reset form input after successfull submission
+        $('#addUserForm').each(function(){
+          this.reset();
+      });
 
       }
 
