@@ -3,6 +3,8 @@
 
 $(()=> {
 
+    $('#alertDiv').hide();
+
    /* attach a submit handler to the form */
    $("#addUserForm").submit(function(event) {
 
@@ -28,6 +30,7 @@ $(()=> {
         // Reset form input after successfull submission
         $('#addUserForm').each(function(){
           this.reset();
+          $('#alertDiv').show().text('User '+ data.name +' added successfully!').fadeOut(8000)
       });
 
       }
