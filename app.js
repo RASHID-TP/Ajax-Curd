@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const hbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 
 
@@ -29,9 +30,12 @@ app.engine( 'hbs', hbs( {
   } ) );
 app.set( 'view engine', 'hbs' );
 
+
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routers/index'))
 app.use('/users', require('./routers/users'))
 
+//console.log(req.body);
 
 const PORT = process.env.PORT || 4000
 app.listen(PORT, ()=> console.log(`server listening on port ${PORT}... `));

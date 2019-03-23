@@ -8,13 +8,13 @@ router.get('/', (req, res)=> {
     res.render('index')
 })
 
-router.post('/adduser',(req, res)=> {
+router.post('/adduser',(req, res)=> {    
     const user = new Users({
         name: req.body.name,
         email: req.body.email
     });
-    user.save()
-        .then(()=> console.log('user added'))
-        .catch(()=> console.log('error'))
+     user.save()
+         .then(()=> console.log('user added'))
+         .catch(()=> console.log('error'))
 })
 module.exports = router;
