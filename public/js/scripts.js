@@ -24,7 +24,7 @@ $(()=> {
       if(status == "success"){
         console.log(data);
         console.log(status);
-        $("#listGroup").prepend('<li class="list-group-item" ><b>Name: </b>'+ data.name + ' <br> <b>Email: </b>'+ data.email +' </li>');
+        $("#listGroup").prepend('<li class="list-group-item" >Name: <b>'+ data.name + '</b> <br> Email: <b>'+ data.email +'</b> </li>');
         // Reset form input after successfull submission
         $('#addUserForm').each(function(){
           this.reset();
@@ -57,7 +57,7 @@ $(()=> {
           $.each(doc, (key, obj) => {
             // console.log(key)
             // console.log(obj);
-            $("#listGroup").prepend('<li class="list-group-item" ><b>Name: </b>'+ obj.name + ' <br> <b>Email: </b>'+ obj.email +' </li>');
+            $("#listGroup").prepend('<li class="list-group-item" >Name : <b>'+ obj.name + '</b> <br> Email : <b>'+ obj.email +'</b> </li>');
           })
         }
         //console.log(status + xhr);

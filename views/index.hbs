@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-4" style="margin-top:20px">
+    <div class="col-md-4" style="margin-top:20px; margin-bottom: 50px">
         <h3>Add User</h3>
         <form id="addUserForm" action="/adduser" method="POST">
             <div class="form-group">
@@ -14,9 +14,11 @@
         </form>
     </div>
 
-    <div class="col-md-8">
-        <ul class="list-group" id="listGroup" style="margin-top: 30px">
-        </ul>
+    <div class="col-md-8" style="margin-top: 20px">
+        <h2> Users</h2>
+            <div style="height:590px; overflow:scroll;">
+                <ul class="list-group" id="listGroup" style="margin-top: 30px"></ul>
+            </div>
     </div>
 
 </div>
