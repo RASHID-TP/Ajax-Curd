@@ -14,7 +14,33 @@ router.post('/adduser',(req, res)=> {
         email: req.body.email
     });
      user.save()
-         .then(()=> console.log('user added'))
+         .then(()=> {
+             console.log('user added')
+             res.redirect('/')
+            })
          .catch(()=> console.log('error'))
+    
 })
+
+
+
+router.get('/allusers', (req, res)=> {
+    Users.find({}, (err, doc, next)=> {
+        if(err) {
+            throw err
+        }
+        console.log(doc);
+        res.send(doc)
+        next;
+
+        
+    })
+
+
+
+})
+
+
+
+
 module.exports = router;
