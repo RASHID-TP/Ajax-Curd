@@ -1,6 +1,4 @@
 
-
-
 $(()=> {
 
     $('#alertDiv').hide();
@@ -37,19 +35,8 @@ $(()=> {
 
     });
 
-    /* Put the results in a div */
-    // posting.done(function(data) {
-    //   console.log(data);
-      
-        // var content = $(data).find('#content');
-        // $("#result").empty().append(content);
-    // });
 
   });
-
-
-
-
 
 
 
@@ -66,8 +53,6 @@ $(()=> {
         //console.log(status + xhr);
       })
     
-    
-
 
     // $('#addUser').click(()=> {
     //   let name = $('#name').val();

@@ -30,12 +30,14 @@ app.engine( 'hbs', hbs( {
   } ) );
 app.set( 'view engine', 'hbs' );
 
-
+// Set express static folder setup
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Routers Setup
 app.use('/', require('./routers/index'))
 app.use('/users', require('./routers/users'))
 
-//console.log(req.body);
 
+// Port Setup
 const PORT = process.env.PORT || 4000
 app.listen(PORT, ()=> console.log(`server listening on port ${PORT}... `));
